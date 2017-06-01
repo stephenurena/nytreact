@@ -1,1 +1,1 @@
-# nytreact
+# NytReact SPA
