@@ -1,1 +1,1 @@
-# scrape-n-store
+# NytReact SPA
