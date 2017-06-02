@@ -1,21 +1,21 @@
 {
-  "name": "scrape-n-store",
+  "name": "nytreact",
   "version": "1.0.0",
-  "description": "create a web app that lets users leave comments on the latest news. But you're not going to actually write any articles; instead, you'll flex your Mongoose and Cheerio muscles to scrape news from another site.",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stephenurena/scrape-n-store.git"
+    "url": "git+https://github.com/stephenurena/nytreact"
   },
   "author": "Stephen Urena",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stephenurena/scrape-n-store/issues"
+    "url": "https://github.com/stephenurena/nytreact/issues"
   },
-  "homepage": "https://github.com/stephenurena/scrape-n-store#readme",
+  "homepage": "https://github.com/stephenurena/nytreact#readme",
   "dependencies": {
     "babel-cli": "6.11.x",
     "babel-core": "6.13.x",
