@@ -4,7 +4,7 @@ var React = require('react');
 //Sub-components
 var Search = require('./sub/Search');
 var Results = require('./sub/Results'); 
-// var Saved = require('./components/sub/Saved');
+var Saved = require('./sub/Saved');
 
 
 
@@ -12,8 +12,8 @@ class NytApp extends React.Component {
 
 	getInitial(){
 		return{
-			resultsArr: [];
-			savedArr: [];
+			resultsArr: [],
+			savedArr: []
 		}
 	}
 	resultsArr(resultsArr) {
@@ -33,13 +33,17 @@ class NytApp extends React.Component {
 			    </div>
 			    <ul className="nav navbar-nav">
 			      <li className="active"><a href="/">Home</a></li>
-			      <li><a href="#">Saved</a></li>
+			      <li><a href="/saved">Saved</a></li>
 			    </ul>
 			  </div>
 			</nav>
 			<div className='container'>
 				<Search resultsArr={this.resultsArr} />
-				<Results />
+				<Results
+				/>
+				<Saved 
+			
+				/>
 			</div>
 		</div>
 		)
