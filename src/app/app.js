@@ -1,8 +1,10 @@
 // src/app-client.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import AppRoutes from './js/components/AppRoutes';
+var React = require ('react');
+var ReactDOM = require('react-dom');
+var NytApp = require('./components/Main.js');
 
-window.onload = () => {
-  ReactDOM.render(<AppRoutes/>, document.getElementById('main'));
-};
+ReactDOM.render(
+	<NytApp />, 
+	document.getElementById('app')
+);
+
