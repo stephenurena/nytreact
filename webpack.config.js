@@ -2,15 +2,18 @@
 const webpack = require('webpack');
 const path = require('path');
 
-module.exports = {
-  entry: path.join(__dirname, 'app', 'app.js'),
+var APP_DIR = path.resolve(__dirname, 'src/app');
+var BUILD_DIR = path.resolve(__dirname, 'src/public');
+
+var config = {
+  entry: APP_DIR + '/app.js',
   output: {
-    path: path.join(__dirname, 'app', 'static', 'js'),
+    path: BUILD_DIR,
     filename: 'bundle.js'
   },
   module: {
     loaders: [{
-      test: path.join(__dirname, 'app'),
+      test: path.join(__dirname, 'src'),
       loader: ['babel-loader'],
       query: {
         cacheDirectory: 'babel_cache',
@@ -32,4 +35,6 @@ module.exports = {
       dead_code: true
     })
   ]
-};
+}
+
+module.exports = config;
