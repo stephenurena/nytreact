@@ -2,17 +2,21 @@
 var React = require('react');
 var Axios = require('axios');
 
+// sub-components
+var Results = require('./Results');
+var Saved = require('./Saved');
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
-    // this.select ={value: 10};
 
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  //method to handle input, distinguishes them by name  
   handleInputChange(event) {
   const target = event.target;
   const value = target.value;
@@ -23,6 +27,7 @@ class Search extends React.Component {
   })
 }
 
+  // on submit query the NYT api database, using npm package Axios
   handleSubmit(event) {
     alert('A query was submitted: ' + this.state.querySearch);
     event.preventDefault();
@@ -34,7 +39,7 @@ class Search extends React.Component {
         URL += "&q=" + this.state.querySearch;
         URL += "&begin_date=" + this.state.startYear + "0101";
         URL += "&end_date=" +this.state.endYear + "1230";
-
+    // var formattedArticles = [];
     //--Axious to fire GET request for NYT api
     Axios.get(URL).then(response=>{
       // console.log("response received");
@@ -49,12 +54,19 @@ class Search extends React.Component {
             snippit: QueryResults[i].lead_paragraph
 
         }
-         // console.log(resultHeadlines);
+        this.props.resultsArr(resultHeadlines);
+        // formattedArticles.push(resultHeadlines);
       }
       
-
     })
+    console.log(resultHeadlines);
   }
+
+  //Saving an article
+  saveArticle(article){
+    axios.post('/saveNew', article)
+  }
+
     render() {
     return (
 	<div className="row">

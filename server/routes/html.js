@@ -5,14 +5,13 @@ var mongoose = require("mongoose");
 let controller = require('../controller/html.controller');
 
 //endpoints
-router.get('/', controller.index);
-router.get('/scrape', controller.scrape);
-router.get('/saved', controller.saved);
-router.get('/results', controller.results);
+router.get('/api/saved', controller.querySaved);
+router.post('/api/saved', controller.articleSaved);
+router.delete('/api/saved/:id', controller.deleteSaved);
 
-router.put('/id/:id', controller.ids);
-router.put('/remove/:id', controller.remove);
-router.put('/comment/:id', controller.comment);
+router.get('*', controller.index);
+
+
 
 //exporting file
 module.exports = router;

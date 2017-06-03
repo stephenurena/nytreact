@@ -18,13 +18,6 @@ var ArticleSchema = new Schema({
 	date: {
 		type: Date,
 		default: Date.now
-	},
-	comments: {
-		type: Array
-	},
-	saved: {
-		type: Boolean,
-		default: false
 	}
 })
 
