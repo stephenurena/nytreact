@@ -23,11 +23,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 //public- static files (if any)
-app.use(express.static("public"));
+app.use(express.static("./src/public"));
 
 
 //routes
-let routes = require('./routes/html');
+let routes = require('./server/routes/html');
 app.use('/', routes);
 
 // module.exports = app;
