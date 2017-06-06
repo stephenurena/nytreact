@@ -9,7 +9,7 @@ router.get('/api/saved', controller.querySaved);
 router.post('/api/saved', controller.articleSaved);
 router.delete('/api/saved/:id', controller.deleteSaved);
 
-router.get('*', controller.index);
+router.get('/', controller.index);
 
 
 

@@ -15,7 +15,10 @@ mongoose.Promise = Promise;
 const Schema = mongoose.Schema;
 
 // Database configuration with mongoose
+//---development DB
 let URI = "mongodb://localhost/nytreact";
+
+//---production DB
 // let URI = "mongodb://heroku_2m0dspmz:i1p1v8m0u68gmn3v7s2e8ej32d@ds153501.mlab.com:53501/heroku_2m0dspmz";å
 mongoose.connect(URI);
 let db = mongoose.connection;
@@ -35,7 +38,7 @@ db.once("open", function() {
 
 //*********** SPA route ************************
 const index = function(req, res) {
-	res.sendFile("./public/index.html");
+	res.sendFile("index.html");
 }
 
 //************ API routes **********************
